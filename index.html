@@ -9,29 +9,45 @@
 
     div.parent{
       background-color: black;
-      color: white;
+      color: #111;
+      display: flex;
+      height: 100vh;
     }
-    @media(min-width:200px){
-      div.parent{
-        background-color: blueviolet;
-      font-size: 0.8rem;
+    div.child{
+      background-color: crimson;
+      flex-basis: 80%;
+
+    }
+    div.sidebar{
+      background-color: orangered;
+      flex-basis: 20%;
+    }
+    @media(max-width:550px){
+      div.sidebar{
+        animation: 5s expand linear infinite;
+      }
+      div.child{
+        flex-basis: 100%;
       }
     }
- 
+    @keyframe expand{
+      0%{
+        flex-basis:0%;
+      }
+      100%{
+        flex-basis:50%;
+      }
+    }    
   
-
-      
-
-
-    
-
 
     </style>
 </head>
 <body>
   <div class ="parent">
-    <h1>im heading</h1>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. At perferendis sint cumque ullam numquam rem amet. Deserunt quae ab, id veniam sed dolorem aliquid consectetur quisquam necessitatibus aut, accusantium laboriosam!
+    <div class="sidebar"></div>
+    <div class="child"></div>
+  
+  
   </div>
   
 </body>
