@@ -4,47 +4,41 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>todolist</title>
+  <title>css4</title>
   <style>
-
+    *{
+      padding: 0;
+      
+      box-sizing: border-box;
+      font-family: 'Courier New', Courier, monospace;margin: 4px;
+      
+    }
     div.parent{
       background-color: black;
-      color: #111;
-      display: flex;
-      height: 100vh;
+      min-height: 200px;
+    
+
     }
     div.child{
-      background-color: lime;
-      flex-basis: 80%;
+      background-color: orange;
+      height: 100px;
+      width: 100px;
+      border-radius: 50px;
+      transition-duration: 2s;
+      transition-timing-function: cubic-bezier(0, 1.26, 1,-0.38);
+
 
     }
-    div.sidebar{
-      background-color: purple;
-      flex-basis: 20%;
+    div.parent:hover div.child{
+      background-color: red;
+      transform: translate(500px);
+      
     }
-    @media(max-width:550px){
-      div.sidebar{
-        animation: 5s expand linear infinite;
-      }
-      div.child{
-        flex-basis: 100%;
-      }
-    }
-    @keyframes expand{
-      0%{
-        flex-basis:0%;
-      }
-      100%{
-        flex-basis:50%;
-      }
-    }    
-  
-
     </style>
 </head>
 <body>
   <div class ="parent">
-    <div class="sidebar"></div>
+ 
     <div class="child"></div>
   
   
