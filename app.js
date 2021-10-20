@@ -1,11 +1,15 @@
-let  response=fetch("https://jsonplaceholder.typicode.com/users").then(res=>{
+const list=document.querySelector("ol")
+let arr =["one","two","three","fiur"]
 
-let parseData=res.json()
-console.log(parseData)
-return parseData
-}).then(book=>{
-  console.log(book)
-})
-let  gata=fetch("https://jsonplaceholder.typicode.com/users").then(res=>res.json()).then(data=>{
-  console.log(data)
+arr.forEach(balu=>{
+  const e =document.createElement('li')
+  const t =document.createTextNode(balu)
+  e.appendChild(t)
+
+  e.addEventListener("click",(e)=>{
+    const userInput=window.prompt(`are u want to delate "${balu}"`)
+    if (userInput=="YES")e.target.remove()
+ 
+  })
+  list.appendChild(e)
 })
