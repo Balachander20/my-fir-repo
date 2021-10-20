@@ -1,14 +1,11 @@
-
 let value=new Promise((resolve,reject)=>{
-  setTimeout(()=>{
-    resolve('hello')
+  setTimeout(() => {
+    reject("hello")
+    
   },3000)
-
-  
 })
 console.log(value)
-setTimeout(()=>{
+setTimeout(() => {
   console.log(value)
-},5000)
-
-
+  
+},4000);
