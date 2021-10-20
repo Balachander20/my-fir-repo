@@ -1,15 +1,16 @@
-const list=document.querySelector("ol")
-let arr =["one","two","three","fiur"]
+const table=document.querySelector("table")
 
-arr.forEach(balu=>{
-  const e =document.createElement('li')
-  const t =document.createTextNode(balu)
-  e.appendChild(t)
+let response=fetch("https://jsonplaceholder.typicode.com/users")
+.then(res=> res.json())
+.then(data=>{
+  data.forEach(user => {
+    let  r =document.createElement("tr")
+    let did =document.createElement("td")
+    let dit =document.createTextNode(user.id)
+    did.appendChild(dit)
+    r.appendChild(did)
+    table.appendChild(r)
+    
+  });
 
-  e.addEventListener("click",(e)=>{
-    const userInput=window.prompt(`are u want to delate "${balu}"`)
-    if (userInput=="YES")e.target.remove()
- 
-  })
-  list.appendChild(e)
 })
